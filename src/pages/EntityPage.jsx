@@ -4,10 +4,14 @@ import { entityConfig } from '../config/entityConfig';
 import apiClient from '../services/api';
 import EntityForm from '../components/EntityForm';
 
+const kebabToCamel = (str) => {
+  return str.replace(/-(\w)/g, (_, char) => char.toUpperCase());
+};
+
 const EntityPage = () => {
   // Get the entity type from the URL, e.g., "locations", "departments"
   const { entitySlug } = useParams(); 
-  const config = entityConfig[entitySlug];
+  const config = entityConfig[kebabToCamel(entitySlug)];
 
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);

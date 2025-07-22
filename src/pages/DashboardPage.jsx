@@ -54,7 +54,6 @@ function DashboardPage() {
     }
   }, [permissions]);
 
-  console.log('Dashboard stats:', stats);
 
   return (
     <div>

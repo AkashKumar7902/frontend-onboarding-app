@@ -16,8 +16,6 @@ const Navbar = () => {
     navigate('/login');
   };
 
-  console.log('Current permissions:', permissions);
-
   return (
     <nav style={{ /* ... styles ... */ }}>
       <div style={{ display: 'flex', gap: '20px' }}>

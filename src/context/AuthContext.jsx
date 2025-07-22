@@ -25,9 +25,6 @@ export const AuthProvider = ({ children }) => {
       
       // Destructure the new, richer payload
       const { token: newToken, user: newUser, tenant: newTenant } = response.data;
-
-      console.log('Login successful:', newUser, newTenant);
-
       setToken(newToken);
       setUser(newUser);
       setPermissions(newTenant.enabledEntities); // <-- Set the permissions
@@ -57,8 +54,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const isAuthenticated = !!token;
-
-  console.log('isAuthentiated:', isAuthenticated);
 
   // Add the user object to the context value
   const value = {
